@@ -1,10 +1,4 @@
-/Empleado.class
-/Gerente.class
-/HolaMundo.class
-/JFrame/
-/Listas/
-/ProgramaUno/
-/Secretaria.class
-/iconguardar.png
-/oompa.jpeg
-/powerpuff.png
+/vista/
+/modelo/
+/dao/
+/controlador/
