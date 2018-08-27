@@ -26,8 +26,7 @@ public class LaminaPrincipal extends JPanel {
 
 		// agregar tabla!
 
-		// creo un array con los datos de la tabla, más adelante se toman de la base de
-		// datos
+		// creo un array con los datos de la tabla, más adelante se toman de la base de datos
 		Object[][] data = { { "Fuji", "Aloha", "27.5", "2009" }, { "Fuji", "Aloha 2.0", "27.5", "2009" },
 				{ "Fuji", "Aloha 3.0", "27.5", "2010" }, { "Fuji", "Aloha 4.0", "27.5", "2015" },
 				{ "Specialized", "Tarmac", "27.5", "2004" }, { "Specialized", "Tarmac 2.0", "27.5", "2005" },
