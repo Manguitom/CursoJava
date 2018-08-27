@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -39,8 +40,9 @@ public class LaminaEdicionBicis extends JPanel {
 		// aca tengo que hacer un grid layout para acomodar, tenia que poner dos dummy
 		// por línea para que funcione
 		JPanel laminaCombo = new JPanel();
-		laminaCombo.add(new JLabel("Marca:"));
-		laminaCombo.add(new JPanel());
+		GridLayout experimentLayout = new GridLayout(5,2);
+        laminaCombo.setLayout(experimentLayout);
+        laminaCombo.add(new JLabel("Marca:"));
 		laminaCombo.add(campoMarca);
 		laminaCombo.add(new JLabel("Modelo:"));
 		laminaCombo.add(campoModelo);
@@ -48,6 +50,8 @@ public class LaminaEdicionBicis extends JPanel {
 		laminaCombo.add(campoRodado);
 		laminaCombo.add(new JLabel("Año:"));
 		laminaCombo.add(comboAnos);
+		laminaCombo.add(new JLabel("Funciona:"));
+		laminaCombo.add(new JLabel("Aca va si/no"));	
 		add(laminaCombo, BorderLayout.CENTER);
 
 		// botones aceptar cancelar

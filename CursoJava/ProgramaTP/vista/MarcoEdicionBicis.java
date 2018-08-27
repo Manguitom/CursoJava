@@ -7,8 +7,8 @@ public class MarcoEdicionBicis extends JFrame {
 		setResizable(true);
 		setUndecorated(false);
 		setTitle("Inicio");
-		setSize(600, 300);
-		setLocation(400, 100);
+		setSize(500, 250);
+		setLocation(450, 150);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		LaminaEdicionBicis lamina = new LaminaEdicionBicis();
