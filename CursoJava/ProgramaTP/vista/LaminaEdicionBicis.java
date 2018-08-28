@@ -2,11 +2,14 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.time.Year;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class LaminaEdicionBicis extends JPanel {
@@ -30,19 +33,41 @@ public class LaminaEdicionBicis extends JPanel {
 		// textbox a la derecha
 		JComboBox<String> comboAnos = new JComboBox<String>();
 		comboAnos.setEditable(false);
-		comboAnos.addItem("2001");
-		comboAnos.addItem("2002");
-		comboAnos.addItem("2003");
-		comboAnos.addItem("2004");
-		comboAnos.addItem("2005");
 
-		// se agrega el combo a una lamina situada en el borde centro
-		// aca tengo que hacer un grid layout para acomodar, tenia que poner dos dummy
-		// por línea para que funcione
+		// hago for loop para completar desde el 1900 al año actual
+		// este metodo para conseguir año es antiguo, prefiero usar el nuevo
+		// java.time.Year
+		// pero, porqué tengo que obtener el valor así?
+		// porque no puedo declarar el start del loop for antes?
+		// Calendar now = Calendar.getInstance();
+		int anoActual = Year.now().getValue();
+		for (int start = 1900; start <= anoActual; start++) {
+			// System.out.println(start);
+			comboAnos.addItem(String.valueOf(start));
+		}
+
+		// botón radio de si está funcionando
+		// este boolean lo uso con el dao recuperado
+		// boolean seleccionado = tamanio == TAMFUENTE;
+		JPanel laminaBotonesRadio = new JPanel();
+		JRadioButton botonRadioSi = new JRadioButton("Si");
+		JRadioButton botonRadioNo = new JRadioButton("No");
+
+		// este grupo sirve para hacer la selección a uno u a otro
+		ButtonGroup grupoBotonesRadio = new ButtonGroup();
+		grupoBotonesRadio.add(botonRadioSi);
+		grupoBotonesRadio.add(botonRadioNo);
+
+		// agregamos los botones si/no a la lámina
+		laminaBotonesRadio.add(botonRadioSi);
+		laminaBotonesRadio.add(botonRadioNo);
+
+		// se agrega el combo a una lamina organizada con gridlayout en vez de
+		// flowlayout situada en el borde centro
 		JPanel laminaCombo = new JPanel();
-		GridLayout experimentLayout = new GridLayout(5,2);
-        laminaCombo.setLayout(experimentLayout);
-        laminaCombo.add(new JLabel("Marca:"));
+		GridLayout experimentLayout = new GridLayout(5, 2);
+		laminaCombo.setLayout(experimentLayout);
+		laminaCombo.add(new JLabel("Marca:"));
 		laminaCombo.add(campoMarca);
 		laminaCombo.add(new JLabel("Modelo:"));
 		laminaCombo.add(campoModelo);
@@ -51,7 +76,7 @@ public class LaminaEdicionBicis extends JPanel {
 		laminaCombo.add(new JLabel("Año:"));
 		laminaCombo.add(comboAnos);
 		laminaCombo.add(new JLabel("Funciona:"));
-		laminaCombo.add(new JLabel("Aca va si/no"));	
+		laminaCombo.add(laminaBotonesRadio);
 		add(laminaCombo, BorderLayout.CENTER);
 
 		// botones aceptar cancelar

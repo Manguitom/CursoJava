@@ -9,7 +9,7 @@ public class MarcoEdicionBicis extends JFrame {
 		setTitle("Inicio");
 		setSize(500, 250);
 		setLocation(450, 150);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
 		LaminaEdicionBicis lamina = new LaminaEdicionBicis();
 		add(lamina);
