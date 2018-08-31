@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.text.NumberFormat;
 
-import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
@@ -14,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class LaminaFormAuto extends JPanel {
 
@@ -30,7 +28,6 @@ public class LaminaFormAuto extends JPanel {
 	private JButton botonAceptar;
 	private JButton botonCancelar;
 	ButtonGroup primeraMano;
-
 
 	public LaminaFormAuto() {
 		setLayout(new BorderLayout(10, 20));
@@ -67,7 +64,7 @@ public class LaminaFormAuto extends JPanel {
 		laminaFormulario.add(modelo);
 
 		// anio
-		JLabel anioLabel = new JLabel("AÃ±o", JLabel.LEFT);
+		JLabel anioLabel = new JLabel("Año", JLabel.LEFT);
 		anio = new JFormattedTextField(NumberFormat.getIntegerInstance());
 		laminaFormulario.add(anioLabel);
 		laminaFormulario.add(anio);
@@ -84,14 +81,13 @@ public class LaminaFormAuto extends JPanel {
 		laminaFormulario.add(costoLabel);
 		laminaFormulario.add(costo);
 
-
 		// primera mano
 		JPanel opcionesPrimeraMano = new JPanel();
 		JLabel primeraManoLabel = new JLabel("Primera Mano", JLabel.LEFT);
 		primeraMano = new ButtonGroup();
-		primeraManoTrue = new JRadioButton("Si",true);
+		primeraManoTrue = new JRadioButton("Si", true);
 		primeraMano.add(primeraManoTrue);
-		primeraManoFalse = new JRadioButton("No",false);
+		primeraManoFalse = new JRadioButton("No", false);
 		primeraMano.add(primeraManoFalse);
 		laminaFormulario.add(primeraManoLabel);
 		opcionesPrimeraMano.add(primeraManoTrue);
@@ -108,7 +104,7 @@ public class LaminaFormAuto extends JPanel {
 
 	}
 
-	//Getters y Setters
+	// Getters y Setters
 	public JTextField getModelo() {
 		return modelo;
 	}
@@ -196,7 +192,5 @@ public class LaminaFormAuto extends JPanel {
 	public void setPrimeraMano(ButtonGroup primeraMano) {
 		this.primeraMano = primeraMano;
 	}
-	
-	
 
 }

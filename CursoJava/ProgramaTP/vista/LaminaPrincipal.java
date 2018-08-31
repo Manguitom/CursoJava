@@ -23,7 +23,7 @@ public class LaminaPrincipal extends JPanel {
 		add(titulo, BorderLayout.NORTH);
 
 		// seccion tabla, faltan los datos que va a llevar la tabla, ya tengo las columnas
-		String[] nombresColumnas = { "Id", "Marca", "Modelo", "Año", "Rodado", "Precio", "Funcionando?" };
+		String[] nombresColumnas = { "Id", "Marca", "Modelo", "Año", "Rodado", "Precio", "Funcionando" };
 		DefaultTableModel modelotabla = new DefaultTableModel(null, nombresColumnas);
 		JTable tabla = new JTable(modelotabla) {
 			public boolean isCellEditable(int row, int column) {
@@ -45,5 +45,29 @@ public class LaminaPrincipal extends JPanel {
 		botonesinferior.add(botonModificar);
 		botonesinferior.add(botonEliminar);
 		add(botonesinferior, BorderLayout.SOUTH);
+	}
+
+	public JButton getBotonAgregar() {
+		return botonAgregar;
+	}
+
+	public void setBotonAgregar(JButton botonAgregar) {
+		this.botonAgregar = botonAgregar;
+	}
+
+	public JButton getBotonModificar() {
+		return botonModificar;
+	}
+
+	public void setBotonModificar(JButton botonModificar) {
+		this.botonModificar = botonModificar;
+	}
+
+	public JButton getBotonEliminar() {
+		return botonEliminar;
+	}
+
+	public void setBotonEliminar(JButton botonEliminar) {
+		this.botonEliminar = botonEliminar;
 	}
 }

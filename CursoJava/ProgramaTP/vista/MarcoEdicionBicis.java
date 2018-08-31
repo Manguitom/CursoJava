@@ -3,6 +3,11 @@ package vista;
 import javax.swing.JFrame;
 
 public class MarcoEdicionBicis extends JFrame {
+
+	// la pongo private porque en la clase MarcoPrincipal está nombrada también como
+	// lamina
+	private LaminaEdicionBicis lamina;
+
 	public MarcoEdicionBicis() {
 		setResizable(true);
 		setUndecorated(false);
@@ -11,7 +16,15 @@ public class MarcoEdicionBicis extends JFrame {
 		setLocation(450, 150);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
-		LaminaEdicionBicis lamina = new LaminaEdicionBicis();
+		lamina = new LaminaEdicionBicis();
 		add(lamina);
+	}
+
+	public LaminaEdicionBicis getLamina() {
+		return lamina;
+	}
+
+	public void setLamina(LaminaEdicionBicis lamina) {
+		this.lamina = lamina;
 	}
 }

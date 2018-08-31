@@ -24,9 +24,9 @@ public class LaminaEdicionBicis extends JPanel {
 		add(lema_superior, BorderLayout.NORTH);
 
 		// coloco los textbox y combobox en el centro
-		JTextField campoMarca = new JTextField("Marca", 30);
-		JTextField campoModelo = new JTextField("Modelo", 30);
-		JTextField campoRodado = new JTextField("Rodado", 30);
+		JTextField campoMarca = new JTextField("", 30);
+		JTextField campoModelo = new JTextField("", 30);
+		JTextField campoRodado = new JTextField("", 30);
 
 		// se crea un combobox y se agregan los nombre de los tipos de letras
 		// me gustaria que estuviera centrado como en el ejemplo cada label a la izq y
@@ -40,8 +40,9 @@ public class LaminaEdicionBicis extends JPanel {
 		// pero, porqué tengo que obtener el valor así?
 		// porque no puedo declarar el start del loop for antes?
 		// Calendar now = Calendar.getInstance();
+		//este método obtiene el año actual del reloj de la pc
 		int anoActual = Year.now().getValue();
-		for (int start = 1900; start <= anoActual; start++) {
+		for (int start = 1800; start <= anoActual; start++) {
 			// System.out.println(start);
 			comboAnos.addItem(String.valueOf(start));
 		}
